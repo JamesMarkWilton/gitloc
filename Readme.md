@@ -8,7 +8,7 @@ Takes a git url, prints out information about how many lines of code it has.
 
 The MIT License (MIT)
 
-Copyright (c) 201666666 James Wilton
+Copyright (c) 2016 James Wilton
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
