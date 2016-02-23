@@ -1,6 +1,6 @@
 require 'tmpdir'
 require 'open3'
-require 'lib/version'
+require 'gitloc/version'
 
 class Gitloc
   def self.call(argv, outstream, errstream)
