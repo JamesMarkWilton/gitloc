@@ -7,6 +7,8 @@ RSpec.describe 'gitloc binary' do
   it 'takes a git repository and tells me how many lines of code are in each file' do
     stdout, stderr, exitstatus = Open3.capture3(binpath, repopath)
     expect(stdout).to match /2.*?test\/fixtures\/2loc/
+    require "pry"
+    binding.pry
     expect(exitstatus).to be_success
   end
 end
