@@ -1,14 +1,13 @@
 require 'open3' # we'll use this to invoke the binary
+require 'minitest'
 
-RSpec.describe 'gitloc binary' do
-  let(:binpath)  { File.expand_path '../../bin/gitloc', __FILE__ }
-  let(:repopath) { File.expand_path '../..',            __FILE__ }
-
-  it 'takes a git repository and tells me how many lines of code are in each file' do
+class AcceptanceTest < Minitest::Test
+  def test_takes_a_git_repository_and_tells_me_how_many_lines_of_code_are_in_each_file
+    binpath = File.expand_path '../../bin/gitloc', __FILE__
+    repopath = File.expand_path '../..', __FILE__
     stdout, stderr, exitstatus = Open3.capture3(binpath, repopath)
-    expect(stdout).to match /2.*?test\/fixtures\/2loc/
-    require "pry"
-    binding.pry
-    expect(exitstatus).to be_success
+
+    assert_match /2.*?test\/fixtures\/2loc/, stdout
+    assert_equal "", stderr
   end
 end
