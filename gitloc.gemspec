@@ -13,4 +13,6 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/JoshCheek/elective-building-a-gem'
 	s.executables << 'gitloc'
   s.add_development_dependency 'mrspec', '~> 0.0'
+  s.add_development_dependency 'rspec', '~> 3.0'
+  s.add_development_dependency 'pry'
 end
