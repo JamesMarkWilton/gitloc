@@ -1,8 +1,8 @@
 require 'gitloc'
+require 'minitest'
 
-RSpec.describe Gitloc do
-  it 'raises RepoDoesNotExistError when the repo does not exist' do
-    expect { Gitloc.call("not-a-repo") }
-      .to raise_error Gitloc::RepoDoesNotExistError, /not-a-repo/
+class GitlocTest < Minitest::Test
+  def test_gitloc_raises_RepoDoesNotExisError_when_repo_does_not_exsist
+    assert_raises { Gitloc.call"not-a-repo" }
   end
 end
