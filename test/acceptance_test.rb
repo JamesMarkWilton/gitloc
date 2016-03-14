@@ -6,8 +6,6 @@ class AcceptanceTest < Minitest::Test
     binpath = File.expand_path '../../bin/gitloc', __FILE__
     repopath = File.expand_path '../..', __FILE__
     stdout, stderr, exitstatus = Open3.capture3(binpath, repopath)
-    require "pry"
-    binding.pry
 
     assert_match /2.*?test\/fixtures\/2loc/, stdout
     assert_equal "", stderr
